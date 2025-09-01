@@ -34,6 +34,7 @@ public class SecurityConfiguration {
                 .csrf(csrf -> csrf.disable()) // desabilita CSRF
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll() // libera /auth
+                        .requestMatchers("/movie/search").permitAll() // libera acesso público
                         .anyRequest().authenticated()            // exige auth p/ o resto
                 )
                 .sessionManagement(session -> session

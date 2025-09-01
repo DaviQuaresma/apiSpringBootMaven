@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -34,7 +35,7 @@ public class User implements UserDetails {
     @Column(nullable = false, name = "created_at")
     private Date createdAt;
 
-    @CreationTimestamp
+    @UpdateTimestamp
     @Column(nullable = false, name = "updated_at")
     private Date updatedAt;
 
