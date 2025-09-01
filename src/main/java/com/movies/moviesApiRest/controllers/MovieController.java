@@ -5,6 +5,8 @@ import com.movies.moviesApiRest.services.MovieApiExternal;
 import com.movies.moviesApiRest.services.MovieService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
@@ -23,7 +25,7 @@ public class MovieController {
         this.movieApiExternal = movieApiExternal;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<Movie> findAllMovies() {
         return movieService.findAll();
     }
@@ -60,8 +62,12 @@ public class MovieController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id){
-        movieService.delete(id);
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        try {
+            movieService.delete(id);
+            return ResponseEntity.noContent().build();
+        } catch (EmptyResultDataAccessException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
-
 }
