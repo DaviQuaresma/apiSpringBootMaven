@@ -1,6 +1,6 @@
 package com.movies.moviesApiRest.controllers;
 
-import com.movies.moviesApiRest.dtos.MovieResponse;
+import com.movies.moviesApiRest.responses.MovieResponse;
 import com.movies.moviesApiRest.models.Movie;
 import com.movies.moviesApiRest.models.PaginationRequest;
 import com.movies.moviesApiRest.responses.PagingResult;
@@ -25,10 +25,10 @@ public class MovieController {
     private final MovieApiExternal movieApiExternal;
     private static final Logger log = LoggerFactory.getLogger(MovieController.class);
 
-    /*@GetMapping
+    @GetMapping("/allMovies")
     public List<Movie> findAllMovies() {
         return movieService.findAll();
-    }*/
+    }
 
     // Paginação
     @GetMapping

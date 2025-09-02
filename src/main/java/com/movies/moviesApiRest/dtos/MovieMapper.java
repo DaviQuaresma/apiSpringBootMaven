@@ -1,6 +1,7 @@
 package com.movies.moviesApiRest.dtos;
 
 import com.movies.moviesApiRest.models.Movie;
+import com.movies.moviesApiRest.responses.MovieResponse;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-import com.movies.moviesApiRest.dtos.MovieResponse;
+import com.movies.moviesApiRest.responses.MovieResponse;
 
 @Service
 public class MovieApiExternal {

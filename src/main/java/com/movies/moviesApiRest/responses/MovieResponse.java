@@ -1,4 +1,4 @@
-package com.movies.moviesApiRest.dtos;
+package com.movies.moviesApiRest.responses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

@@ -1,6 +1,6 @@
 package com.movies.moviesApiRest.services;
 
-import com.movies.moviesApiRest.dtos.MovieResponse;
+import com.movies.moviesApiRest.responses.MovieResponse;
 import com.movies.moviesApiRest.models.Movie;
 import com.movies.moviesApiRest.models.PaginationRequest;
 import com.movies.moviesApiRest.repositories.MovieRepository;
